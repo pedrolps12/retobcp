@@ -5,6 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+/**
+ * The type Request save exchange currency.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

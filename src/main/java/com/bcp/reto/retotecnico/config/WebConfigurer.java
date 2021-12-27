@@ -11,15 +11,30 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import reactor.core.publisher.Mono;
 
+
+/**
+ * Class configuration WebFluxSecurity
+ */
 @Configuration
 @EnableWebFluxSecurity
 public class WebConfigurer {
 
+  /**
+   * Password encoder password encoder.
+   *
+   * @return the password encoder
+   */
   @Bean
   public PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder();
   }
 
+  /**
+   * Spring web filter chain security web filter chain.
+   *
+   * @param http the http
+   * @return the security web filter chain
+   */
   @Bean
   public SecurityWebFilterChain springWebFilterChain(ServerHttpSecurity http) {
     return http

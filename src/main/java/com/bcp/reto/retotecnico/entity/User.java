@@ -13,6 +13,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
+/**
+ * Class User.
+ */
 @Table("users")
 @Getter
 @Setter

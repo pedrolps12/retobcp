@@ -7,6 +7,10 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+
+/**
+ * The type Exchange rate.
+ */
 @Table("exchange_rate")
 @Getter
 @Setter

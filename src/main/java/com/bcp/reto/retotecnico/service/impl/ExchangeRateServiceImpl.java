@@ -11,11 +11,20 @@ import io.reactivex.rxjava3.core.Maybe;
 import io.reactivex.rxjava3.core.Single;
 import org.springframework.stereotype.Service;
 
+
+/**
+ * The type Exchange rate service.
+ */
 @Service
 public class ExchangeRateServiceImpl implements ExchangeRateService {
 
   private final ExchangeCurrencyRepository repository;
 
+  /**
+   * Instantiates a new Exchange rate service.
+   *
+   * @param repository the repository
+   */
   public ExchangeRateServiceImpl(ExchangeCurrencyRepository repository) {
     this.repository = repository;
   }

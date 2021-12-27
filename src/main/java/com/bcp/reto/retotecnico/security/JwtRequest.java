@@ -7,6 +7,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
+/**
+ * The type Jwt request.
+ */
 @Getter
 @Builder
 @NoArgsConstructor

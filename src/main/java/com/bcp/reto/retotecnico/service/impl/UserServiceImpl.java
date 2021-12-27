@@ -11,6 +11,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+/**
+ * Class User service.
+ */
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -20,6 +23,13 @@ public class UserServiceImpl implements UserService {
 
   private TokenProvider tokenProvider;
 
+  /**
+   * Instantiates a new User service.
+   *
+   * @param userRepository  the user repository
+   * @param tokenProvider   the token provider
+   * @param passwordEncoder the password encoder
+   */
   public UserServiceImpl(UserRepository userRepository, TokenProvider tokenProvider,
       PasswordEncoder passwordEncoder) {
     this.userRepository = userRepository;

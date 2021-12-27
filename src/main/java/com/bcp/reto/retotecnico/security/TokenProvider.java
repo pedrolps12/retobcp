@@ -14,6 +14,10 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+
+/**
+ * The type Token provider.
+ */
 @Component
 public class TokenProvider {
 
@@ -26,11 +30,20 @@ public class TokenProvider {
 
   private Key key;
 
+  /**
+   * Init.
+   */
   @PostConstruct
   public void init() {
     this.key = Keys.hmacShaKeyFor(secret.getBytes());
   }
 
+  /**
+   * Generate token string.
+   *
+   * @param user the user
+   * @return the string
+   */
   public String generateToken(User user) {
     Map<String, Object> claims = new HashMap<>();
     claims.put("role", user.getAuthorities());
@@ -44,6 +57,12 @@ public class TokenProvider {
         .signWith(key).compact();
   }
 
+  /**
+   * Validate token boolean.
+   *
+   * @param token the token
+   * @return the boolean
+   */
   public boolean validateToken(String token) {
     try {
       Jws<Claims> claims = Jwts.parserBuilder().setSigningKey(key).build()

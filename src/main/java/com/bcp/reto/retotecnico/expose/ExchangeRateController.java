@@ -13,16 +13,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
+/**
+ * The type Exchange rate controller.
+ */
 @RestController
 @RequestMapping(value = "/v1/retotecnico")
 public class ExchangeRateController {
 
   private final ExchangeRateService service;
 
+  /**
+   * Instantiates a new Exchange rate controller.
+   *
+   * @param service the service
+   */
   public ExchangeRateController(ExchangeRateService service) {
     this.service = service;
   }
 
+  /**
+   * Create currency single.
+   *
+   * @param requestCurrency the request currency
+   * @return the single
+   */
   @PostMapping("currency")
   @ResponseBody
   public Single<ResponseSaveCurrency> createCurrency(
@@ -31,6 +46,12 @@ public class ExchangeRateController {
   }
 
 
+  /**
+   * Gets currency.
+   *
+   * @param requestCurrency the request currency
+   * @return the currency
+   */
   @PostMapping("getCurrency")
   @ResponseBody
   public Single<ResponseCurrency> getCurrency(
@@ -39,6 +60,12 @@ public class ExchangeRateController {
     return service.processCurrency(requestCurrency);
   }
 
+  /**
+   * Gets currency with zip.
+   *
+   * @param requestCurrency the request currency
+   * @return the currency with zip
+   */
   @PostMapping("getCurrencyZip")
   @ResponseBody
   public Single<ResponseCurrency> getCurrencyWithZip(

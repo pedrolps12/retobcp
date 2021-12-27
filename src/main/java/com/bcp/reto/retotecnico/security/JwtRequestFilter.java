@@ -14,6 +14,10 @@ import org.springframework.web.server.WebFilter;
 import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
+
+/**
+ * The type Jwt request filter.
+ */
 @Component
 public class JwtRequestFilter implements WebFilter {
 

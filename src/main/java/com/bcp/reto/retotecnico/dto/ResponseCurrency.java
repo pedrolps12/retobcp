@@ -5,6 +5,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+
+/**
+ * The type Response currency.
+ */
 @Getter
 @Setter
 @Builder
